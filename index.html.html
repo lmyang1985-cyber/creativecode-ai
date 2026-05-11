@@ -445,37 +445,35 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
   </div>
 
   <!-- BACKGROUND REMOVER -->
-  <div id="ws-bgr" style="display:none">
-    <div class="ws-card ws-bgr">
-      <div class="ws-hdr"><div class="ws-title">✂️ Background Remover</div><div class="cdisp"><span class="ci">✦</span><span class="cn" id="bC">0</span> credits</div></div>
-      <label>Upload your image</label>
-      <div class="file-drop" id="bDrop" onclick="document.getElementById('bFile').click()">
-        <input type="file" id="bFile" accept="image/*" onchange="handleImgUpload(this)">
-        <div class="fd-icon">📁</div>
-        <div class="fd-txt">Click to upload image · PNG, JPG, WEBP</div>
-        <img id="bPreview" class="fd-preview" />
-      </div>
-      <div class="fr2">
-        <div class="fg"><label>Output Format</label>
-          <select id="bFmt"><option value="png">PNG (transparent background)</option><option value="jpg">JPG (white background)</option></select>
-        </div>
-        <div class="fg"><label>Quality</label>
-          <select id="bQl"><option value="auto">Auto</option><option value="high">High Detail</option></select>
-        </div>
-      </div>
-      <button class="gbtn gbtn-blue" id="bBtn" onclick="genBgr()">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>Remove Background
-      </button>
-      <div class="ncbox" id="bNC"><div class="nc-txt"><strong>No credits left.</strong> BG removal costs 1 credit.</div><button class="btnm" onclick="openModal('credits')">Buy Credits</button></div>
-      <div class="ebox" id="bE"></div>
-      <div class="output" id="bOut">
-        <div class="out-hdr"><span class="out-lbl">✦ Result</span><button class="dl-btn" style="color:var(--blue);border:1px solid rgba(77,141,255,.3)" onclick="dlM('bgr')">↓ Save</button></div>
-        <div class="mbox" id="bBox"><div class="ldr" id="bLdr"><div class="ring rb"></div><div class="ltxt">Removing background...</div><div class="lsub">5–15 seconds</div></div></div>
-      </div>
-      <div class="buybar"><div class="bb-txt"><strong id="bBB">0</strong> credits left · BG removal costs 1 credit</div><button class="btnm" onclick="openModal('credits')">+ Top Up</button></div>
-    </div>
-  </div>
-
+ async function genBgr() {
+  if(!curBgrFile)return showErr('bE','Please upload an image first.');
+  const cost=1;
+  hideNC('bNC'); hideErr('bE');
+  if(!canUse(cost))return showNC('bNC');
+  setBtn('bBtn',true,'');
+  document.getElementById('bLdr').style.display='flex';
+  document.getElementById('bOut').classList.add('on');
+  curBgr=null;
+  const old=document.getElementById('bBox').querySelector('img');if(old)old.remove();
+  try {
+    const reader = new FileReader();
+    const base64 = await new Promise(r=>{reader.onload=e=>r(e.target.result);reader.readAsDataURL(curBgrFile);});
+    const res=await fetch('/api/remove-background',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({imageBase64:base64,format:document.getElementById('bFmt').value})});
+    const d=await res.json();
+    if(!res.ok)throw new Error(d.error||'Failed');
+    curBgr=d.image;
+    document.getElementById('bLdr').style.display='none';
+    const box=document.getElementById('bBox');
+    const img=document.createElement('img');img.src=curBgr;img.style.borderRadius='12px';box.appendChild(img);
+    if(!isPro)save(creds-cost);
+  } catch(e){
+    document.getElementById('bLdr').style.display='none';
+    document.getElementById('bOut').classList.remove('on');
+    showErr('bE',e.message);
+  } finally {
+    setBtn('bBtn',false,'Remove Background','<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>');
+  }
+}
   <!-- TEXT WRITER -->
   <div id="ws-txt" style="display:none">
     <div class="ws-card ws-txt">
