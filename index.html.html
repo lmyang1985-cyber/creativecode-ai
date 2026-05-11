@@ -806,10 +806,10 @@ async function genVid() {
       await new Promise(r=>setTimeout(r,4000));
       document.getElementById('vST').textContent=`Processing... ${(i+1)*4}s`;
       const pr=await fetch(`/api/poll-video?id=${gid}`);
-      if(pr.status===202)continue;
-      if(!pr.ok){const e=await pr.json().catch(()=>({}));throw new Error(e.error||'Poll failed')}
-      const blob=await pr.blob();videoUrl=URL.createObjectURL(blob);break;
-    }
+if(pr.status===202)continue;
+if(!pr.ok){const e=await pr.json().catch(()=>({}));throw new Error(e.error||'Poll failed')}
+const pd=await pr.json();
+if(pd.url){videoUrl=pd.url;break;}
     if(!videoUrl)throw new Error('Timed out. Try again.');
     curVid=videoUrl;
     document.getElementById('vST').textContent='Done!';
