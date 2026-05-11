@@ -805,29 +805,11 @@ async function genVid() {
     for(let i=0;i<40;i++){
       await new Promise(r=>setTimeout(r,4000));
       document.getElementById('vST').textContent=`Processing... ${(i+1)*4}s`;
-      const pr=await fetch(`/api/poll-video?id=${gid}`);
+     const pr=await fetch(`/api/poll-video?id=${gid}`);
 if(pr.status===202)continue;
 if(!pr.ok){const e=await pr.json().catch(()=>({}));throw new Error(e.error||'Poll failed')}
 const pd=await pr.json();
 if(pd.url){videoUrl=pd.url;break;}
-    if(!videoUrl)throw new Error('Timed out. Try again.');
-    curVid=videoUrl;
-    document.getElementById('vST').textContent='Done!';
-    setTimeout(()=>document.getElementById('vSB').classList.remove('on'),2000);
-    document.getElementById('vLdr').style.display='none';
-    const box=document.getElementById('vBox');
-    const v=document.createElement('video');v.src=videoUrl;v.controls=true;v.autoplay=true;v.loop=true;v.style.borderRadius='12px';box.appendChild(v);
-    document.getElementById('vOut').classList.add('on');
-    if(!isPro)save(creds-cost);
-  } catch(e){
-    document.getElementById('vLdr').style.display='none';
-    document.getElementById('vOut').classList.remove('on');
-    document.getElementById('vSB').classList.remove('on');
-    showErr('vE',e.message);
-  } finally {
-    setBtn('vBtn',false,'Generate Video','<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>');
-  }
-}
 
 // ══════════ AVATAR GEN ══════════
 async function genAva() {
