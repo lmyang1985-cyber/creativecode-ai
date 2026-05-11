@@ -810,38 +810,6 @@ if(pr.status===202)continue;
 if(!pr.ok){const e=await pr.json().catch(()=>({}));throw new Error(e.error||'Poll failed')}
 const pd=await pr.json();
 if(pd.url){videoUrl=pd.url;break;}
-
-// ══════════ AVATAR GEN ══════════
-async function genAva() {
-  const p=document.getElementById('aP').value.trim();
-  const st=document.getElementById('aSt').value;
-  const bg=document.getElementById('aBg').value;
-  const mo=document.getElementById('aMo').value;
-  const cost=2;
-  hideNC('aNC'); hideErr('aE');
-  if(!p)return showErr('aE','Please describe your avatar.');
-  if(!canUse(cost))return showNC('aNC');
-  const fp=[p,st,bg,mo,`portrait, centered, high quality`].filter(Boolean).join(', ');
-  setBtn('aBtn',true,'');
-  document.getElementById('aLdr').style.display='flex';
-  document.getElementById('aOut').classList.add('on');
-  curAva=null;
-  const old=document.getElementById('aBox').querySelector('img');if(old)old.remove();
-  try {
-    const r=await fetch('/api/generate-image',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:fp,size:'1024x1024',quality:'hd'})});
-    const d=await r.json();
-    if(!r.ok)throw new Error(d.error||'Failed');
-    curAva=d.url;showImgResult(curAva,'aBox','aOut','aLdr');
-    if(!isPro)save(creds-cost);
-  } catch(e){
-    document.getElementById('aLdr').style.display='none';
-    document.getElementById('aOut').classList.remove('on');
-    showErr('aE',e.message);
-  } finally {
-    setBtn('aBtn',false,'Generate Avatar','<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>');
-  }
-}
-
 // ══════════ MUSIC GEN ══════════
 async function genMus() {
   const p=document.getElementById('mP').value.trim();
