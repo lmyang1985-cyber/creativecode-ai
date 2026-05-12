@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CreativeCode AI — All-in-One AI Studio</title>
+<title>CreativeCode AI</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#07070f;--s1:#0f0f1c;--s2:#161626;--s3:#1e1e30;--br:#222236;--br2:#2e2e48;--gold:#f5c842;--gold2:#ffe07a;--teal:#00ddb0;--pink:#ff4d8d;--blue:#4d8dff;--purple:#a64dff;--orange:#ff7a3d;--text:#f0f0fa;--muted:#5a5a88;--muted2:#38385a}
+:root{--bg:#07070f;--s1:#0f0f1c;--s2:#161626;--br:#222236;--br2:#2e2e48;--gold:#f5c842;--gold2:#ffe07a;--teal:#00ddb0;--pink:#ff4d8d;--blue:#4d8dff;--purple:#a64dff;--orange:#ff7a3d;--text:#f0f0fa;--muted:#5a5a88;--muted2:#38385a}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;min-height:100vh;overflow-x:hidden}
 body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 70% 50% at 15% 0%,rgba(245,200,66,.06) 0%,transparent 55%),radial-gradient(ellipse 60% 40% at 85% 100%,rgba(0,221,176,.06) 0%,transparent 55%);pointer-events:none;z-index:0}
@@ -14,27 +14,23 @@ nav{position:sticky;top:0;z-index:200;display:flex;justify-content:space-between
 .logo{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;background:linear-gradient(135deg,var(--gold),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .nav-r{display:flex;align-items:center;gap:.7rem}
 .cpill{align-items:center;gap:.4rem;background:var(--s2);border:1px solid var(--br2);border-radius:100px;padding:.3rem .9rem;font-size:.82rem;font-weight:600;display:flex}
-.cpill .ci{color:var(--gold)}
-#navC{color:var(--gold)}
+.cpill .ci{color:var(--gold)}#navC{color:var(--gold)}
 .sub-pill{align-items:center;gap:.4rem;background:rgba(0,221,176,.1);border:1px solid rgba(0,221,176,.3);border-radius:100px;padding:.3rem .9rem;font-size:.78rem;font-weight:700;color:var(--teal);display:none}
 .btn-nav{border:none;border-radius:100px;padding:.4rem 1rem;font-family:'Outfit',sans-serif;font-size:.8rem;font-weight:700;cursor:pointer;transition:transform .15s,box-shadow .2s}
-.btn-gold{background:var(--gold);color:var(--bg)}
-.btn-gold:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(245,200,66,.35)}
-.btn-outline{background:none;border:1px solid var(--br2);color:var(--muted)}
-.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.btn-gold{background:var(--gold);color:var(--bg)}.btn-gold:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(245,200,66,.35)}
+.btn-outline{background:none;border:1px solid var(--br2);color:var(--muted)}.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
 .hero{position:relative;z-index:1;text-align:center;padding:5.5rem 2rem 3.5rem;max-width:900px;margin:0 auto}
 .eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-family:'DM Mono',monospace;font-size:.68rem;color:var(--teal);letter-spacing:.15em;text-transform:uppercase;padding:.3rem 1rem;border:1px solid rgba(0,221,176,.25);border-radius:100px;background:rgba(0,221,176,.04);margin-bottom:1.5rem}
 .edot{width:6px;height:6px;border-radius:50%;background:var(--teal);animation:blink 2s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
 h1{font-family:'Syne',sans-serif;font-size:clamp(2.8rem,7vw,5.5rem);font-weight:800;line-height:1.02;letter-spacing:-.03em;margin-bottom:1rem}
-h1 em{font-style:normal;background:linear-gradient(135deg,var(--gold) 0%,var(--gold2) 35%,var(--teal) 70%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:200%;animation:gs 5s linear infinite}
-@keyframes gs{0%{background-position:0%}100%{background-position:200%}}
+h1 em{font-style:normal;background:linear-gradient(135deg,var(--gold) 0%,var(--gold2) 35%,var(--teal) 70%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hsub{color:var(--muted);font-size:1rem;line-height:1.7;max-width:500px;margin:0 auto 2rem}
 .free-badge{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,rgba(245,200,66,.12),rgba(0,221,176,.08));border:1px solid rgba(245,200,66,.25);border-radius:100px;padding:.5rem 1.2rem;font-size:.88rem;font-weight:600;color:var(--gold2);margin-bottom:2.5rem}
 .tools-section{position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:0 1.5rem 3rem}
 .tools-label{font-family:'DM Mono',monospace;font-size:.7rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;text-align:center;margin-bottom:1.5rem}
 .tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:3rem}
-.tool-card{background:var(--s1);border:1px solid var(--br);border-radius:16px;padding:1.5rem;cursor:pointer;transition:border-color .2s,transform .15s,box-shadow .2s;position:relative;overflow:hidden;text-align:left}
+.tool-card{background:var(--s1);border:1px solid var(--br);border-radius:16px;padding:1.5rem;cursor:pointer;transition:border-color .2s,transform .15s,box-shadow .2s;position:relative;text-align:left}
 .tool-card:hover{transform:translateY(-3px)}
 .tool-card.img:hover,.tool-card.img.active{border-color:var(--gold);box-shadow:0 6px 24px rgba(245,200,66,.12)}
 .tool-card.vid:hover,.tool-card.vid.active{border-color:var(--pink);box-shadow:0 6px 24px rgba(255,77,141,.12)}
@@ -43,12 +39,9 @@ h1 em{font-style:normal;background:linear-gradient(135deg,var(--gold) 0%,var(--g
 .tool-card.bgr:hover,.tool-card.bgr.active{border-color:var(--blue);box-shadow:0 6px 24px rgba(77,141,255,.12)}
 .tool-card.txt:hover,.tool-card.txt.active{border-color:var(--orange);box-shadow:0 6px 24px rgba(255,122,61,.12)}
 .tc-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:1.3rem}
-.tool-card.img .tc-icon{background:rgba(245,200,66,.12)}
-.tool-card.vid .tc-icon{background:rgba(255,77,141,.12)}
-.tool-card.ava .tc-icon{background:rgba(166,77,255,.12)}
-.tool-card.mus .tc-icon{background:rgba(0,221,176,.12)}
-.tool-card.bgr .tc-icon{background:rgba(77,141,255,.12)}
-.tool-card.txt .tc-icon{background:rgba(255,122,61,.12)}
+.tool-card.img .tc-icon{background:rgba(245,200,66,.12)}.tool-card.vid .tc-icon{background:rgba(255,77,141,.12)}
+.tool-card.ava .tc-icon{background:rgba(166,77,255,.12)}.tool-card.mus .tc-icon{background:rgba(0,221,176,.12)}
+.tool-card.bgr .tc-icon{background:rgba(77,141,255,.12)}.tool-card.txt .tc-icon{background:rgba(255,122,61,.12)}
 .tc-name{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;margin-bottom:.3rem}
 .tc-desc{font-size:.78rem;color:var(--muted);line-height:1.5}
 .tc-cost{position:absolute;top:.8rem;right:.8rem;font-family:'DM Mono',monospace;font-size:.62rem;color:var(--muted);background:var(--s2);border-radius:100px;padding:.2rem .6rem}
@@ -68,10 +61,10 @@ h1 em{font-style:normal;background:linear-gradient(135deg,var(--gold) 0%,var(--g
 .cdisp{display:flex;align-items:center;gap:.4rem;background:var(--s2);border:1px solid var(--br2);border-radius:100px;padding:.3rem .9rem;font-size:.82rem;font-weight:600}
 .cdisp .ci{color:var(--gold)}.cdisp .cn{color:var(--gold)}
 label{display:block;font-family:'DM Mono',monospace;font-size:.68rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.45rem}
-textarea,select,input[type=text]{width:100%;background:var(--bg);border:1px solid var(--br2);border-radius:10px;color:var(--text);font-family:'Outfit',sans-serif;font-size:.92rem;padding:.7rem 1rem;transition:border-color .2s,box-shadow .2s}
+textarea,select,input[type=text]{width:100%;background:var(--bg);border:1px solid var(--br2);border-radius:10px;color:var(--text);font-family:'Outfit',sans-serif;font-size:.92rem;padding:.7rem 1rem;transition:border-color .2s}
 textarea{height:95px;resize:none;line-height:1.6;margin-bottom:1.1rem}
-textarea::placeholder,input::placeholder{color:var(--muted2)}
-textarea:focus,select:focus,input:focus{outline:none}
+textarea::placeholder{color:var(--muted2)}
+textarea:focus,select:focus,input:focus{outline:none;border-color:var(--gold)}
 .fr{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.9rem;margin-bottom:1.1rem}
 .fr2{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-bottom:1.1rem}
 .fg{display:flex;flex-direction:column}
@@ -112,8 +105,7 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
 .sbar{display:none;align-items:center;gap:.6rem;padding:.75rem 1rem;background:rgba(255,77,141,.04);border:1px solid rgba(255,77,141,.12);border-radius:10px;margin-top:.9rem;font-family:'DM Mono',monospace;font-size:.72rem;color:var(--muted)}
 .sbar.on{display:flex}
 .sdot{width:7px;height:7px;border-radius:50%;animation:blink 1.5s ease-in-out infinite}
-.btnm{background:var(--gold);color:var(--bg);border:none;border-radius:8px;padding:.4rem 1rem;font-family:'Outfit',sans-serif;font-size:.8rem;font-weight:700;cursor:pointer;white-space:nowrap;transition:transform .15s}
-.btnm:hover{transform:translateY(-1px)}
+.btnm{background:var(--gold);color:var(--bg);border:none;border-radius:8px;padding:.4rem 1rem;font-family:'Outfit',sans-serif;font-size:.8rem;font-weight:700;cursor:pointer;white-space:nowrap}
 .buybar{margin-top:1.3rem;background:linear-gradient(135deg,rgba(245,200,66,.06),rgba(0,221,176,.03));border:1px solid rgba(245,200,66,.15);border-radius:12px;padding:.9rem 1.3rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .bb-txt{font-size:.85rem;color:var(--muted)}.bb-txt strong{color:var(--text)}
 .file-drop{border:2px dashed var(--br2);border-radius:10px;padding:2rem;text-align:center;cursor:pointer;transition:border-color .2s;margin-bottom:1.1rem}
@@ -125,19 +117,13 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
 .hist{margin-top:1.5rem;display:none}.hist.on{display:block}
 .hlbl{font-family:'DM Mono',monospace;font-size:.68rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.7rem}
 .hrow{display:flex;gap:.7rem;overflow-x:auto;padding-bottom:.4rem}
-.hrow::-webkit-scrollbar{height:3px}
-.hrow::-webkit-scrollbar-thumb{background:var(--muted2);border-radius:2px}
 .hthumb{flex-shrink:0;width:72px;height:72px;border-radius:8px;overflow:hidden;border:1px solid var(--br);cursor:pointer;transition:border-color .2s,transform .15s}
-.hthumb:hover{transform:scale(1.06)}
-.hthumb img{width:100%;height:100%;object-fit:cover}
+.hthumb:hover{transform:scale(1.06)}.hthumb img{width:100%;height:100%;object-fit:cover}
 .tpanel{display:none}.tpanel.active{display:block}
 .mbg{position:fixed;inset:0;z-index:300;background:rgba(0,0,0,.88);backdrop-filter:blur(12px);display:none;align-items:center;justify-content:center;padding:1rem}
 .mbg.open{display:flex}
-.modal{background:var(--s1);border:1px solid var(--br2);border-radius:24px;padding:2.5rem;max-width:560px;width:100%;position:relative;animation:fu .3s ease forwards;max-height:90vh;overflow-y:auto}
-.modal::-webkit-scrollbar{width:4px}
-.modal::-webkit-scrollbar-thumb{background:var(--muted2);border-radius:2px}
-.mx{position:absolute;top:1.2rem;right:1.2rem;background:var(--s2);border:none;color:var(--muted);width:32px;height:32px;border-radius:50%;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:color .2s}
-.mx:hover{color:var(--text)}
+.modal{background:var(--s1);border:1px solid var(--br2);border-radius:24px;padding:2.5rem;max-width:520px;width:100%;position:relative;animation:fu .3s ease forwards;max-height:90vh;overflow-y:auto}
+.mx{position:absolute;top:1.2rem;right:1.2rem;background:var(--s2);border:none;color:var(--muted);width:32px;height:32px;border-radius:50%;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .mtitle{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:.3rem}
 .msub{color:var(--muted);font-size:.85rem;margin-bottom:1.5rem}
 .modal-tabs{display:flex;background:var(--s2);border-radius:10px;padding:4px;margin-bottom:1.5rem}
@@ -157,463 +143,348 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
 .spp{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--teal)}
 .spfeats{font-size:.78rem;color:var(--muted);line-height:1.8}
 .spfeats span{display:inline-block;margin-right:.8rem}
-.spfeats span::before{content:'✓ ';color:var(--teal)}
+.spfeats span::before{content:'checkmark ';color:var(--teal)}
 .pay-btn{width:100%;padding:.95rem;border:none;border-radius:12px;font-family:'Outfit',sans-serif;font-size:.98rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.5rem;transition:transform .15s,box-shadow .2s,opacity .2s}
 .pay-btn:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
-.pay-btn.gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--bg)}
-.pay-btn.gold:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 26px rgba(245,200,66,.3)}
-.pay-btn.teal{background:var(--teal);color:var(--bg)}
-.pay-btn.teal:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 26px rgba(0,221,176,.3)}
+.pay-btn.gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--bg)}.pay-btn.gold:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 26px rgba(245,200,66,.3)}
+.pay-btn.teal{background:var(--teal);color:var(--bg)}.pay-btn.teal:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 26px rgba(0,221,176,.3)}
 .mnote{text-align:center;margin-top:.7rem;font-family:'DM Mono',monospace;font-size:.63rem;color:var(--muted)}
 @media(max-width:640px){nav{padding:1rem 1.2rem}.hero{padding:3.5rem 1.2rem 2.5rem}.tools-section,.workspace{padding:0 1rem 3rem}.tools-grid{grid-template-columns:1fr 1fr}.fr{grid-template-columns:1fr 1fr}.fr2{grid-template-columns:1fr}.ws-card{padding:1.2rem}.modal{padding:1.5rem}}
 </style>
 </head>
 <body>
-
 <nav>
   <div class="logo">CreativeCode AI</div>
   <div class="nav-r">
-    <div class="sub-pill" id="subPill">⚡ Pro Member</div>
-    <div class="cpill" id="cpill"><span class="ci">✦</span><span id="navC">0</span> credits</div>
+    <div class="sub-pill" id="subPill">Pro Member</div>
+    <div class="cpill" id="cpill"><span class="ci">+</span><span id="navC">0</span> credits</div>
     <button class="btn-nav btn-outline" id="btnSub" onclick="openModal('sub')" style="display:none">Subscribe</button>
     <button class="btn-nav btn-gold" id="btnBuy" onclick="openModal('credits')" style="display:none">+ Credits</button>
   </div>
 </nav>
-
 <div class="hero">
   <div class="eyebrow"><span class="edot"></span> All-in-One AI Studio</div>
   <h1>Create anything<br>with <em>AI magic</em></h1>
   <p class="hsub">Images, videos, avatars, music, text and more. No account needed — start free today.</p>
-  <div class="free-badge">🎁 3 Free Credits on first visit <span style="color:var(--muted);font-size:.8rem">· No credit card required</span></div>
+  <div class="free-badge">3 Free Credits on first visit · No credit card required</div>
 </div>
-
 <div class="tools-section">
-  <div class="tools-label">✦ Choose a tool to get started</div>
+  <div class="tools-label">Choose a tool to get started</div>
   <div class="tools-grid">
-    <div class="tool-card img" onclick="openTool('img')">
-      <div class="tc-icon">🖼️</div>
-      <div class="tc-name">Image Generator</div>
-      <div class="tc-desc">Create stunning AI images from text prompts</div>
-      <div class="tc-cost">1–2 credits</div>
-    </div>
-    <div class="tool-card vid" onclick="openTool('vid')">
-      <div class="tc-icon">🎬</div>
-      <div class="tc-name">Video Generator</div>
-      <div class="tc-desc">Turn prompts into short AI video clips</div>
-      <div class="tc-cost">3–5 credits</div>
-    </div>
-    <div class="tool-card ava" onclick="openTool('ava')">
-      <div class="tc-icon">🧑‍🎨</div>
-      <div class="tc-name">Avatar Generator</div>
-      <div class="tc-desc">Generate unique AI avatars and portraits</div>
-      <div class="tc-cost">2 credits</div>
-    </div>
-    <div class="tool-card mus" onclick="openTool('mus')">
-      <div class="tc-icon">🎵</div>
-      <div class="tc-name">Music Generator</div>
-      <div class="tc-desc">Create original AI music from descriptions</div>
-      <div class="tc-cost">3 credits</div>
-    </div>
-    <div class="tool-card bgr" onclick="openTool('bgr')">
-      <div class="tc-icon">✂️</div>
-      <div class="tc-name">Background Remover</div>
-      <div class="tc-desc">Remove image backgrounds instantly with AI</div>
-      <div class="tc-cost">1 credit</div>
-    </div>
-    <div class="tool-card txt" onclick="openTool('txt')">
-      <div class="tc-icon">✍️</div>
-      <div class="tc-name">AI Text Writer</div>
-      <div class="tc-desc">Generate articles, captions, copy and more</div>
-      <div class="tc-cost">1 credit</div>
-    </div>
+    <div class="tool-card img" onclick="openTool('img')"><div class="tc-icon">IMG</div><div class="tc-name">Image Generator</div><div class="tc-desc">Create stunning AI images from text prompts</div><div class="tc-cost">1-2 credits</div></div>
+    <div class="tool-card vid" onclick="openTool('vid')"><div class="tc-icon">VID</div><div class="tc-name">Video Generator</div><div class="tc-desc">Turn prompts into short AI video clips</div><div class="tc-cost">3-5 credits</div></div>
+    <div class="tool-card ava" onclick="openTool('ava')"><div class="tc-icon">AVA</div><div class="tc-name">Avatar Generator</div><div class="tc-desc">Generate unique AI avatars and portraits</div><div class="tc-cost">2 credits</div></div>
+    <div class="tool-card mus" onclick="openTool('mus')"><div class="tc-icon">MUS</div><div class="tc-name">Music Generator</div><div class="tc-desc">Create original AI music from descriptions</div><div class="tc-cost">3 credits</div></div>
+    <div class="tool-card bgr" onclick="openTool('bgr')"><div class="tc-icon">BGr</div><div class="tc-name">Background Remover</div><div class="tc-desc">Remove image backgrounds instantly with AI</div><div class="tc-cost">1 credit</div></div>
+    <div class="tool-card txt" onclick="openTool('txt')"><div class="tc-icon">TXT</div><div class="tc-name">AI Text Writer</div><div class="tc-desc">Generate articles, captions, copy and more</div><div class="tc-cost">1 credit</div></div>
   </div>
 </div>
-
 <div class="workspace" id="ws">
-
-  <!-- IMAGE -->
   <div id="ws-img" style="display:none">
     <div class="ws-card ws-img">
-      <div class="card-hdr"><div class="ctitle">🖼️ Image Generator</div><div class="cdisp"><span class="ci">✦</span><span class="cn" id="iC">0</span> credits</div></div>
+      <div class="card-hdr"><div class="ctitle">Image Generator</div><div class="cdisp"><span class="ci">+</span><span class="cn" id="iC">0</span> credits</div></div>
       <label>Describe your image</label>
       <textarea id="iP" placeholder="A futuristic neon city at night, rain-soaked streets, cinematic lighting, ultra detailed..."></textarea>
       <div class="fr">
-        <div class="fg"><label>Style</label>
-          <select id="iSt"><option value="">None</option><option value="photorealistic">Photorealistic</option><option value="digital art">Digital Art</option><option value="oil painting">Oil Painting</option><option value="watercolor">Watercolor</option><option value="cyberpunk">Cyberpunk</option><option value="anime">Anime</option><option value="3D render">3D Render</option><option value="pencil sketch">Sketch</option></select>
-        </div>
-        <div class="fg"><label>Size</label>
-          <select id="iSz"><option value="1024x1024">Square 1:1</option><option value="1792x1024">Wide 16:9</option><option value="1024x1792">Portrait 9:16</option></select>
-        </div>
-        <div class="fg"><label>Quality</label>
-          <select id="iQ"><option value="standard">Standard (1 credit)</option><option value="hd">HD (2 credits)</option></select>
-        </div>
+        <div class="fg"><label>Style</label><select id="iSt"><option value="">None</option><option value="photorealistic">Photorealistic</option><option value="digital art">Digital Art</option><option value="oil painting">Oil Painting</option><option value="watercolor">Watercolor</option><option value="cyberpunk">Cyberpunk</option><option value="anime">Anime</option><option value="3D render">3D Render</option><option value="pencil sketch">Sketch</option></select></div>
+        <div class="fg"><label>Size</label><select id="iSz"><option value="1024x1024">Square 1:1</option><option value="1792x1024">Wide 16:9</option><option value="1024x1792">Portrait 9:16</option></select></div>
+        <div class="fg"><label>Quality</label><select id="iQ"><option value="standard">Standard (1 credit)</option><option value="hd">HD (2 credits)</option></select></div>
       </div>
-      <button class="gbtn gbtn-gold" id="iBtn" onclick="genImg()">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>Generate Image
-      </button>
+      <button class="gbtn gbtn-gold" id="iBtn" onclick="genImg()">Generate Image</button>
       <div class="ncbox" id="iNC"><div class="nc-txt"><strong>No credits left.</strong> Buy more to continue.</div><button class="btnm" onclick="openModal('credits')">Buy Credits</button></div>
       <div class="ebox" id="iE"></div>
       <div class="output" id="iOut">
-        <div class="out-hdr"><span class="out-lbl">✦ Result</span><button class="dl-btn" style="color:var(--gold);border:1px solid rgba(245,200,66,.3)" onclick="dlM('img')">↓ Save</button></div>
-        <div class="mbox" id="iBox"><div class="ldr" id="iLdr"><div class="ring rg"></div><div class="ltxt">Generating image...</div><div class="lsub">10–30 seconds</div></div></div>
+        <div class="out-hdr"><span class="out-lbl">Result</span><button class="dl-btn" style="color:var(--gold);border:1px solid rgba(245,200,66,.3)" onclick="dlM('img')">Save</button></div>
+        <div class="mbox" id="iBox"><div class="ldr" id="iLdr"><div class="ring rg"></div><div class="ltxt">Generating image...</div><div class="lsub">20-40 seconds</div></div></div>
       </div>
       <div class="hist" id="iHist"><div class="hlbl">Recent</div><div class="hrow" id="iHRow"></div></div>
       <div class="buybar"><div class="bb-txt"><strong id="iBB">0</strong> credits left</div><button class="btnm" onclick="openModal('credits')">+ Top Up</button></div>
     </div>
   </div>
-
-  <!-- VIDEO -->
   <div id="ws-vid" style="display:none">
     <div class="ws-card ws-vid">
-      <div class="card-hdr"><div class="ctitle">🎬 Video Generator</div><div class="cdisp"><span class="ci">✦</span><span class="cn" id="vC">0</span> credits</div></div>
+      <div class="card-hdr"><div class="ctitle">Video Generator</div><div class="cdisp"><span class="ci">+</span><span class="cn" id="vC">0</span> credits</div></div>
       <label>Describe your video</label>
       <textarea id="vP" placeholder="Slow cinematic waves crashing on black volcanic rocks, golden hour light, mist rising..."></textarea>
       <div class="fr">
-        <div class="fg"><label>Style</label>
-          <select id="vSt"><option value="">None</option><option value="cinematic">Cinematic</option><option value="slow motion">Slow Motion</option><option value="timelapse">Timelapse</option><option value="anime">Anime</option><option value="3D animation">3D Animation</option></select>
-        </div>
-        <div class="fg"><label>Motion</label>
-          <select id="vMo"><option value="">Default</option><option value="subtle pan">Subtle Pan</option><option value="dramatic zoom">Dramatic Zoom</option><option value="static shot">Static</option><option value="handheld">Handheld</option></select>
-        </div>
-        <div class="fg"><label>Quality</label>
-          <select id="vCo"><option value="3">Standard (3 credits)</option><option value="5">HD (5 credits)</option></select>
-        </div>
+        <div class="fg"><label>Style</label><select id="vSt"><option value="">None</option><option value="cinematic">Cinematic</option><option value="slow motion">Slow Motion</option><option value="timelapse">Timelapse</option><option value="anime">Anime</option><option value="3D animation">3D Animation</option></select></div>
+        <div class="fg"><label>Motion</label><select id="vMo"><option value="">Default</option><option value="subtle pan">Subtle Pan</option><option value="dramatic zoom">Dramatic Zoom</option><option value="static shot">Static</option><option value="handheld">Handheld</option></select></div>
+        <div class="fg"><label>Quality</label><select id="vCo"><option value="3">Standard (3 credits)</option><option value="5">HD (5 credits)</option></select></div>
       </div>
-      <button class="gbtn gbtn-pink" id="vBtn" onclick="genVid()">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>Generate Video
-      </button>
-      <div class="ncbox" id="vNC"><div class="nc-txt"><strong>Not enough credits.</strong> Videos cost 3–5 credits.</div><button class="btnm" onclick="openModal('credits')">Buy Credits</button></div>
+      <button class="gbtn gbtn-pink" id="vBtn" onclick="genVid()">Generate Video</button>
+      <div class="ncbox" id="vNC"><div class="nc-txt"><strong>Not enough credits.</strong> Videos cost 3-5 credits.</div><button class="btnm" onclick="openModal('credits')">Buy Credits</button></div>
       <div class="ebox" id="vE"></div>
       <div class="sbar" id="vSB"><div class="sdot" style="background:var(--pink)"></div><span id="vST">Processing...</span></div>
       <div class="output" id="vOut">
-        <div class="out-hdr"><span class="out-lbl">✦ Result</span><button class="dl-btn" style="color:var(--pink);border:1px solid rgba(255,77,141,.3)" onclick="dlM('vid')">↓ Save MP4</button></div>
-        <div class="mbox" id="vBox"><div class="ldr" id="vLdr"><div class="ring rp"></div><div class="ltxt">Generating video...</div><div class="lsub">30–90 seconds</div></div></div>
+        <div class="out-hdr"><span class="out-lbl">Result</span><button class="dl-btn" style="color:var(--pink);border:1px solid rgba(255,77,141,.3)" onclick="dlM('vid')">Save MP4</button></div>
+        <div class="mbox" id="vBox"><div class="ldr" id="vLdr"><div class="ring rp"></div><div class="ltxt">Generating video...</div><div class="lsub">30-90 seconds</div></div></div>
       </div>
-      <div class="buybar"><div class="bb-txt"><strong id="vBB">0</strong> credits left · Videos 3–5 credits each</div><button class="btnm" onclick="openModal('credits')">+ Top Up</button></div>
+      <div class="buybar"><div class="bb-txt"><strong id="vBB">0</strong> credits left</div><button class="btnm" onclick="openModal('credits')">+ Top Up</button></div>
     </div>
   </div>
-
-  <!-- AVATAR -->
   <div id="ws-ava" style="display:none">
     <div class="ws-card ws-ava">
-      <div class="card-hdr"><div class="ctitle">🧑‍🎨 Avatar Generator</div><div class="cdisp"><span class="ci">✦</span><span class="cn" id="aC">0</span> credits</div></div>
+      <div class="card-hdr"><div class="ctitle">Avatar Generator</div><div class="cdisp"><span class="ci">+</span><span class="cn" id="aC">0</span> credits</div></div>
       <label>Describe your avatar</label>
       <textarea id="aP" placeholder="A professional woman with short black hair, futuristic outfit, neon purple background, digital art style..."></textarea>
       <div class="fr">
-        <div class="fg"><label>Style</label>
-          <select id="aSt"><option value="digital art portrait">Digital Art</option><option value="anime portrait">Anime</option><option value="3D rendered portrait">3D Render</option><option value="oil painting portrait">Oil Painting</option><option value="photorealistic portrait">Photorealistic</option><option value="pixel art portrait">Pixel Art</option></select>
-        </div>
-        <div class="fg"><label>Background</label>
-          <select id="aBg"><option value="">None</option><option value="solid color background">Solid Color</option><option value="gradient background">Gradient</option><option value="nature background">Nature</option><option value="futuristic background">Futuristic</option></select>
-        </div>
-        <div class="fg"><label>Mood</label>
-          <select id="aMo"><option value="">Neutral</option><option value="smiling">Happy</option><option value="serious">Serious</option><option value="mysterious">Mysterious</option><option value="confident">Confident</option></select>
-        </div>
+        <div class="fg"><label>Style</label><select id="aSt"><option value="digital art portrait">Digital Art</option><option value="anime portrait">Anime</option><option value="3D rendered portrait">3D Render</option><option value="oil painting portrait">Oil Painting</option><option value="photorealistic portrait">Photorealistic</option><option value="pixel art portrait">Pixel Art</option></select></div>
+        <div class="fg"><label>Background</label><select id="aBg"><option value="">None</option><option value="solid color background">Solid Color</option><option value="gradient background">Gradient</option><option value="nature background">Nature</option><option value="futuristic background">Futuristic</option></select></div>
+        <div class="fg"><label>Mood</label><select id="aMo"><option value="">Neutral</option><option value="smiling">Happy</option><option value="serious">Serious</option><option value="mysterious">Mysterious</option><option value="confident">Confident</option></select></div>
       </div>
-      <button class="gbtn gbtn-purple" id="aBtn" onclick="genAva()">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Generate Avatar
-      </button>
+      <button class="gbtn gbtn-purple" id="aBtn" onclick="genAva()">Generate Avatar</button>
       <div class="ncbox" id="aNC"><div class="nc-txt"><strong>No credits left.</strong> Avatars cost 2 credits.</div><button class="btnm" onclick="openModal('credits')">Buy Credits</button></div>
       <div class="ebox" id="aE"></div>
       <div class="output" id="aOut">
-        <div class="out-hdr"><span class="out-lbl">✦ Result</span><button class="dl-btn" style="color:var(--purple);border:1px solid rgba(166,77,255,.3)" onclick="dlM('ava')">↓ Save</button></div>
-        <div class="mbox" id="aBox"><div class="ldr" id="aLdr"><div class="ring rv"></div><div class="ltxt">Generating avatar...</div><div class="lsub">10–30 seconds</div></div></div>
+        <div class="out-hdr"><span class="out-lbl">Result</span><button class="dl-btn" style="color:var(--purple);border:1px solid rgba(166,77,255,.3)" onclick="dlM('ava')">Save</button></div>
+        <div class="mbox" id="aBox"><div class="ldr" id="aLdr"><div class="ring rv"></div><div class="ltxt">Generating avatar...</div><div class="lsub">20-40 seconds</div></div></div>
       </div>
-      <div class="buybar"><div class="bb-txt"><strong id="aBB">0</strong> credits left · Avatars cost 2 credits</div><button class="btnm" onclick="openModal('credits')">+ Top Up</button></div>
+      <div class="buybar"><div class="bb-txt"><strong id="aBB">0</strong> credits left</div><button class="btnm" onclick="openModal('credits')">+ Top Up</button></div>
     </div>
   </div>
-
-  <!-- MUSIC -->
   <div id="ws-mus" style="display:none">
     <div class="ws-card ws-mus">
-      <div class="card-hdr"><div class="ctitle">🎵 Music Generator</div><div class="cdisp"><span class="ci">✦</span><span class="cn" id="mC">0</span> credits</div></div>
+      <div class="card-hdr"><div class="ctitle">Music Generator</div><div class="cdisp"><span class="ci">+</span><span class="cn" id="mC">0</span> credits</div></div>
       <label>Describe your music</label>
       <textarea id="mP" placeholder="Upbeat tropical house music with steel drums and ocean vibes, 120 BPM, summer festival energy..."></textarea>
       <div class="fr">
-        <div class="fg"><label>Genre</label>
-          <select id="mG"><option value="">Any</option><option value="electronic">Electronic</option><option value="hip hop">Hip Hop</option><option value="ambient">Ambient</option><option value="jazz">Jazz</option><option value="classical">Classical</option><option value="rock">Rock</option><option value="lo-fi">Lo-Fi</option></select>
-        </div>
-        <div class="fg"><label>Mood</label>
-          <select id="mMo"><option value="">Any</option><option value="energetic">Energetic</option><option value="relaxing">Relaxing</option><option value="happy">Happy</option><option value="dark">Dark</option><option value="epic">Epic</option></select>
-        </div>
-        <div class="fg"><label>Duration</label>
-          <select id="mD"><option value="15">15 seconds</option><option value="30" selected>30 seconds</option><option value="60">60 seconds</option></select>
-        </div>
+        <div class="fg"><label>Genre</label><select id="mG"><option value="">Any</option><option value="electronic">Electronic</option><option value="hip hop">Hip Hop</option><option value="ambient">Ambient</option><option value="jazz">Jazz</option><option value="classical">Classical</option><option value="rock">Rock</option><option value="lo-fi">Lo-Fi</option></select></div>
+        <div class="fg"><label>Mood</label><select id="mMo"><option value="">Any</option><option value="energetic">Energetic</option><option value="relaxing">Relaxing</option><option value="happy">Happy</option><option value="dark">Dark</option><option value="epic">Epic</option></select></div>
+        <div class="fg"><label>Duration</label><select id="mD"><option value="15">15 seconds</option><option value="30" selected>30 seconds</option><option value="60">60 seconds</option></select></div>
       </div>
-      <button class="gbtn gbtn-teal" id="mBtn" onclick="genMus()">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>Generate Music
-      </button>
+      <button class="gbtn gbtn-teal" id="mBtn" onclick="genMus()">Generate Music</button>
       <div class="ncbox" id="mNC"><div class="nc-txt"><strong>No credits left.</strong> Music costs 3 credits.</div><button class="btnm" onclick="openModal('credits')">Buy Credits</button></div>
       <div class="ebox" id="mE"></div>
       <div class="output" id="mOut">
-        <div class="out-hdr"><span class="out-lbl">✦ Result</span><button class="dl-btn" style="color:var(--teal);border:1px solid rgba(0,221,176,.3)" onclick="dlM('mus')">↓ Save MP3</button></div>
-        <div class="mbox" id="mBox"><div class="ldr" id="mLdr"><div class="ring rt"></div><div class="ltxt">Generating music...</div><div class="lsub">20–60 seconds</div></div></div>
+        <div class="out-hdr"><span class="out-lbl">Result</span><button class="dl-btn" style="color:var(--teal);border:1px solid rgba(0,221,176,.3)" onclick="dlM('mus')">Save MP3</button></div>
+        <div class="mbox" id="mBox"><div class="ldr" id="mLdr"><div class="ring rt"></div><div class="ltxt">Generating music...</div><div class="lsub">20-60 seconds</div></div></div>
       </div>
-      <div class="buybar"><div class="bb-txt"><strong id="mBB">0</strong> credits left · Music costs 3 credits</div><button class="btnm" onclick="openModal('credits')">+ Top Up</button></div>
+      <div class="buybar"><div class="bb-txt"><strong id="mBB">0</strong> credits left</div><button class="btnm" onclick="openModal('credits')">+ Top Up</button></div>
     </div>
   </div>
-
-  <!-- BG REMOVER -->
   <div id="ws-bgr" style="display:none">
     <div class="ws-card ws-bgr">
-      <div class="card-hdr"><div class="ctitle">✂️ Background Remover</div><div class="cdisp"><span class="ci">✦</span><span class="cn" id="bC">0</span> credits</div></div>
+      <div class="card-hdr"><div class="ctitle">Background Remover</div><div class="cdisp"><span class="ci">+</span><span class="cn" id="bC">0</span> credits</div></div>
       <label>Upload your image</label>
       <div class="file-drop" onclick="document.getElementById('bFile').click()">
         <input type="file" id="bFile" accept="image/*" onchange="handleUpload(this)">
-        <div class="fd-icon">📁</div>
-        <div class="fd-txt" id="bTxt">Click to upload image · PNG, JPG, WEBP</div>
+        <div class="fd-icon">UPLOAD</div>
+        <div class="fd-txt" id="bTxt">Click to upload image - PNG, JPG, WEBP</div>
         <img id="bPreview" class="fd-preview" />
       </div>
       <div class="fr2">
-        <div class="fg"><label>Output Format</label>
-          <select id="bFmt"><option value="png">PNG (transparent background)</option><option value="jpg">JPG (white background)</option></select>
-        </div>
-        <div class="fg"><label>Quality</label>
-          <select id="bQl"><option value="auto">Auto</option><option value="high">High Detail</option></select>
-        </div>
+        <div class="fg"><label>Output Format</label><select id="bFmt"><option value="png">PNG (transparent background)</option><option value="jpg">JPG (white background)</option></select></div>
+        <div class="fg"><label>Quality</label><select id="bQl"><option value="auto">Auto</option><option value="high">High Detail</option></select></div>
       </div>
-      <button class="gbtn gbtn-blue" id="bBtn" onclick="genBgr()">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>Remove Background
-      </button>
+      <button class="gbtn gbtn-blue" id="bBtn" onclick="genBgr()">Remove Background</button>
       <div class="ncbox" id="bNC"><div class="nc-txt"><strong>No credits left.</strong> BG removal costs 1 credit.</div><button class="btnm" onclick="openModal('credits')">Buy Credits</button></div>
       <div class="ebox" id="bE"></div>
       <div class="output" id="bOut">
-        <div class="out-hdr"><span class="out-lbl">✦ Result</span><button class="dl-btn" style="color:var(--blue);border:1px solid rgba(77,141,255,.3)" onclick="dlM('bgr')">↓ Save</button></div>
-        <div class="mbox" id="bBox"><div class="ldr" id="bLdr"><div class="ring rb"></div><div class="ltxt">Removing background...</div><div class="lsub">5–15 seconds</div></div></div>
+        <div class="out-hdr"><span class="out-lbl">Result</span><button class="dl-btn" style="color:var(--blue);border:1px solid rgba(77,141,255,.3)" onclick="dlM('bgr')">Save</button></div>
+        <div class="mbox" id="bBox"><div class="ldr" id="bLdr"><div class="ring rb"></div><div class="ltxt">Removing background...</div><div class="lsub">5-15 seconds</div></div></div>
       </div>
-      <div class="buybar"><div class="bb-txt"><strong id="bBB">0</strong> credits left · BG removal costs 1 credit</div><button class="btnm" onclick="openModal('credits')">+ Top Up</button></div>
+      <div class="buybar"><div class="bb-txt"><strong id="bBB">0</strong> credits left</div><button class="btnm" onclick="openModal('credits')">+ Top Up</button></div>
     </div>
   </div>
-
-  <!-- TEXT -->
   <div id="ws-txt" style="display:none">
     <div class="ws-card ws-txt">
-      <div class="card-hdr"><div class="ctitle">✍️ AI Text Writer</div><div class="cdisp"><span class="ci">✦</span><span class="cn" id="tC">0</span> credits</div></div>
+      <div class="card-hdr"><div class="ctitle">AI Text Writer</div><div class="cdisp"><span class="ci">+</span><span class="cn" id="tC">0</span> credits</div></div>
       <label>What do you want to write?</label>
       <textarea id="tP" placeholder="Write a 200-word Instagram caption for a travel photo in Bali, adventurous and inspiring tone..."></textarea>
       <div class="fr">
-        <div class="fg"><label>Type</label>
-          <select id="tTy"><option value="caption">Social Caption</option><option value="blog post">Blog Post</option><option value="product description">Product Description</option><option value="email">Email</option><option value="ad copy">Ad Copy</option><option value="story">Short Story</option><option value="poem">Poem</option></select>
-        </div>
-        <div class="fg"><label>Tone</label>
-          <select id="tTo"><option value="professional">Professional</option><option value="casual">Casual</option><option value="funny">Funny</option><option value="inspiring">Inspiring</option><option value="persuasive">Persuasive</option></select>
-        </div>
-        <div class="fg"><label>Length</label>
-          <select id="tLn"><option value="short">Short (~100 words)</option><option value="medium" selected>Medium (~300 words)</option><option value="long">Long (~600 words)</option></select>
-        </div>
+        <div class="fg"><label>Type</label><select id="tTy"><option value="caption">Social Caption</option><option value="blog post">Blog Post</option><option value="product description">Product Description</option><option value="email">Email</option><option value="ad copy">Ad Copy</option><option value="story">Short Story</option><option value="poem">Poem</option></select></div>
+        <div class="fg"><label>Tone</label><select id="tTo"><option value="professional">Professional</option><option value="casual">Casual</option><option value="funny">Funny</option><option value="inspiring">Inspiring</option><option value="persuasive">Persuasive</option></select></div>
+        <div class="fg"><label>Length</label><select id="tLn"><option value="short">Short (~100 words)</option><option value="medium" selected>Medium (~300 words)</option><option value="long">Long (~600 words)</option></select></div>
       </div>
-      <button class="gbtn gbtn-orange" id="tBtn" onclick="genTxt()">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Generate Text
-      </button>
+      <button class="gbtn gbtn-orange" id="tBtn" onclick="genTxt()">Generate Text</button>
       <div class="ncbox" id="tNC"><div class="nc-txt"><strong>No credits left.</strong> Text costs 1 credit.</div><button class="btnm" onclick="openModal('credits')">Buy Credits</button></div>
       <div class="ebox" id="tE"></div>
       <div class="output" id="tOut">
-        <div class="out-hdr"><span class="out-lbl">✦ Result</span><button class="dl-btn" style="color:var(--orange);border:1px solid rgba(255,122,61,.3)" onclick="copyTxt()">⎘ Copy</button></div>
-        <div class="mbox" id="tBox">
-          <div class="ldr" id="tLdr"><div class="ring ro"></div><div class="ltxt">Writing...</div><div class="lsub">5–15 seconds</div></div>
-          <div class="txt-out" id="tTxtOut"></div>
-        </div>
+        <div class="out-hdr"><span class="out-lbl">Result</span><button class="dl-btn" style="color:var(--orange);border:1px solid rgba(255,122,61,.3)" onclick="copyTxt()">Copy</button></div>
+        <div class="mbox" id="tBox"><div class="ldr" id="tLdr"><div class="ring ro"></div><div class="ltxt">Writing...</div><div class="lsub">5-15 seconds</div></div><div class="txt-out" id="tTxtOut"></div></div>
       </div>
-      <div class="buybar"><div class="bb-txt"><strong id="tBB">0</strong> credits left · Text costs 1 credit</div><button class="btnm" onclick="openModal('credits')">+ Top Up</button></div>
+      <div class="buybar"><div class="bb-txt"><strong id="tBB">0</strong> credits left</div><button class="btnm" onclick="openModal('credits')">+ Top Up</button></div>
     </div>
   </div>
-
 </div>
-
-<!-- MODAL -->
 <div class="mbg" id="mbg">
   <div class="modal">
-    <button class="mx" onclick="closeModal()">✕</button>
+    <button class="mx" onclick="closeModal()">X</button>
     <div class="mtitle">Get Credits</div>
     <div class="msub">One-time purchase or unlimited monthly plan.</div>
     <div class="modal-tabs">
-      <button class="mt-btn active" id="mtC" onclick="switchModal('credits')">💳 Credit Packs</button>
-      <button class="mt-btn" id="mtS" onclick="switchModal('sub')">⚡ Subscription</button>
+      <button class="mt-btn active" id="mtC" onclick="switchModal('credits')">Credit Packs</button>
+      <button class="mt-btn" id="mtS" onclick="switchModal('sub')">Subscription</button>
     </div>
     <div id="modalC">
       <div class="cplans">
-        <div class="cplan" onclick="selCP(0,this)"><div class="cpl"><div class="cpn">Starter — 10 Credits</div><div class="cpd">~10 images · Pay once, never expires</div></div><div class="cpp">$2</div></div>
-        <div class="cplan" onclick="selCP(1,this)"><div class="cpl"><div class="cpn">Basic — 30 Credits ⭐</div><div class="cpd">~30 images or 10 videos · Best value</div></div><div class="cpp">$5</div></div>
-        <div class="cplan" onclick="selCP(2,this)"><div class="cpl"><div class="cpn">Pro — 70 Credits</div><div class="cpd">~70 images or 23 videos · Power user</div></div><div class="cpp">$10</div></div>
+        <div class="cplan" onclick="selCP(0,this)"><div class="cpl"><div class="cpn">Starter - 10 Credits</div><div class="cpd">~10 images - Pay once, never expires</div></div><div class="cpp">$2</div></div>
+        <div class="cplan" onclick="selCP(1,this)"><div class="cpl"><div class="cpn">Basic - 30 Credits</div><div class="cpd">~30 images or 10 videos - Best value</div></div><div class="cpp">$5</div></div>
+        <div class="cplan" onclick="selCP(2,this)"><div class="cpl"><div class="cpn">Pro - 70 Credits</div><div class="cpd">~70 images or 23 videos - Power user</div></div><div class="cpp">$10</div></div>
       </div>
-      <button class="pay-btn gold" id="cpBtn" onclick="checkout('credits')" disabled>
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Pay with Stripe
-      </button>
+      <button class="pay-btn gold" id="cpBtn" onclick="checkout('credits')" disabled>Pay with Stripe</button>
     </div>
     <div id="modalS" style="display:none">
       <div class="splans">
         <div class="splan" onclick="selSP(0,this)">
-          <div class="splan-hdr"><div class="spn">Monthly Plan</div><div class="spp">$9.99<span style="font-size:.8rem;color:var(--muted);font-family:'Outfit',sans-serif">/mo</span></div></div>
-          <div class="spfeats"><span>Unlimited images</span><span>50 videos/mo</span><span>All 6 tools</span><span>Priority generation</span></div>
+          <div class="splan-hdr"><div class="spn">Monthly Plan</div><div class="spp">$9.99/mo</div></div>
+          <div class="spfeats"><span>Unlimited images</span><span>50 videos/mo</span><span>All 6 tools</span></div>
         </div>
         <div class="splan" onclick="selSP(1,this)">
-          <div class="splan-hdr"><div class="spn">Annual Plan 🎉</div><div class="spp">$83.88<span style="font-size:.8rem;color:var(--muted);font-family:'Outfit',sans-serif">/yr</span></div></div>
-          <div class="spfeats"><span>Everything in Monthly</span><span>Save 30%</span><span>Only $6.99/mo</span><span>Priority support</span></div>
+          <div class="splan-hdr"><div class="spn">Annual Plan</div><div class="spp">$83.88/yr</div></div>
+          <div class="spfeats"><span>Everything in Monthly</span><span>Save 30%</span><span>Only $6.99/mo</span></div>
         </div>
       </div>
-      <button class="pay-btn teal" id="spBtn" onclick="checkout('sub')" disabled>
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>Subscribe with Stripe
-      </button>
+      <button class="pay-btn teal" id="spBtn" onclick="checkout('sub')" disabled>Subscribe with Stripe</button>
     </div>
-    <div class="mnote">🔒 Stripe · No card stored on our servers · Cancel anytime</div>
+    <div class="mnote">Stripe secure checkout - No card stored on our servers</div>
   </div>
 </div>
-
 <script>
-// ═══════════════ STATE ═══════════════
 const PLANS=[{credits:10,priceId:'price_STARTER_HERE'},{credits:30,priceId:'price_BASIC_HERE'},{credits:70,priceId:'price_PRO_HERE'}];
 const SPLANS=[{priceId:'price_MONTHLY_HERE'},{priceId:'price_ANNUAL_HERE'}];
 let selCPIdx=-1,selSPIdx=-1;
 let creds=parseInt(localStorage.getItem('cc_creds')??'-1');
 let isPro=localStorage.getItem('cc_pro')==='1';
-let curImg=null,curVid=null,curAva=null,curMus=null,curBgr=null,bgrFile=null;
+let curImg=null,curVid=null,curAva=null,curMus=null,curBgr=null;
 
-// Give 3 free credits on first visit
 if(creds===-1){creds=3;localStorage.setItem('cc_creds','3');}
 
 function save(n){creds=n;localStorage.setItem('cc_creds',String(n));updateUI();}
 function setPro(v){isPro=v;localStorage.setItem('cc_pro',v?'1':'0');updateUI();}
 
 function updateUI(){
-  const val=isPro?'∞':String(creds);
-  ['navC','iC','vC','aC','mC','bC','tC'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent=val;});
-  ['iBB','vBB','aBB','mBB','bBB','tBB'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent=val;});
+  const val=isPro?'inf':String(creds);
+  ['navC','iC','vC','aC','mC','bC','tC','iBB','vBB','aBB','mBB','bBB','tBB'].forEach(function(id){var e=document.getElementById(id);if(e)e.textContent=val;});
   document.getElementById('cpill').style.display=isPro?'none':'flex';
   document.getElementById('subPill').style.display=isPro?'flex':'none';
   document.getElementById('btnBuy').style.display='flex';
   document.getElementById('btnSub').style.display=isPro?'none':'flex';
 }
 
-// Check payment return
 (function(){
-  const p=new URLSearchParams(location.search);
+  var p=new URLSearchParams(location.search);
   if(p.get('payment')==='success'){
-    const type=p.get('type'),idx=parseInt(p.get('plan')||'0');
-    if(type==='credits'){const add=PLANS[idx]?.credits||10;save(creds+add);toast('✦ '+add+' credits added!');}
-    else if(type==='sub'){setPro(true);toast('⚡ Pro subscription activated!');}
+    var type=p.get('type'),idx=parseInt(p.get('plan')||'0');
+    if(type==='credits'){var add=PLANS[idx]?PLANS[idx].credits:10;save(creds+add);toast(add+' credits added!');}
+    else if(type==='sub'){setPro(true);toast('Pro subscription activated!');}
     history.replaceState({},'',location.pathname);
   }
   updateUI();
 })();
 
-// ═══════════════ TOOLS ═══════════════
 function openTool(tool){
-  document.querySelectorAll('.tool-card').forEach(c=>c.classList.remove('active'));
+  document.querySelectorAll('.tool-card').forEach(function(c){c.classList.remove('active');});
   document.querySelector('.tool-card.'+tool).classList.add('active');
-  document.querySelectorAll('#ws > div').forEach(d=>d.style.display='none');
+  document.querySelectorAll('#ws > div').forEach(function(d){d.style.display='none';});
   document.getElementById('ws-'+tool).style.display='block';
   document.getElementById('ws').classList.add('visible');
-  setTimeout(()=>document.getElementById('ws-'+tool).scrollIntoView({behavior:'smooth',block:'start'}),100);
+  setTimeout(function(){document.getElementById('ws-'+tool).scrollIntoView({behavior:'smooth',block:'start'});},100);
 }
 
-// ═══════════════ MODAL ═══════════════
 function openModal(tab){document.getElementById('mbg').classList.add('open');switchModal(tab||'credits');}
 function closeModal(){document.getElementById('mbg').classList.remove('open');}
-document.getElementById('mbg').addEventListener('click',e=>{if(e.target===document.getElementById('mbg'))closeModal();});
+document.getElementById('mbg').addEventListener('click',function(e){if(e.target===document.getElementById('mbg'))closeModal();});
 function switchModal(tab){
   document.getElementById('modalC').style.display=tab==='credits'?'block':'none';
   document.getElementById('modalS').style.display=tab==='sub'?'block':'none';
   document.getElementById('mtC').classList.toggle('active',tab==='credits');
   document.getElementById('mtS').classList.toggle('active',tab==='sub');
 }
-function selCP(i,el){selCPIdx=i;document.querySelectorAll('.cplan').forEach(p=>p.classList.remove('s'));el.classList.add('s');document.getElementById('cpBtn').disabled=false;}
-function selSP(i,el){selSPIdx=i;document.querySelectorAll('.splan').forEach(p=>p.classList.remove('s'));el.classList.add('s');document.getElementById('spBtn').disabled=false;}
+function selCP(i,el){selCPIdx=i;document.querySelectorAll('.cplan').forEach(function(p){p.classList.remove('s');});el.classList.add('s');document.getElementById('cpBtn').disabled=false;}
+function selSP(i,el){selSPIdx=i;document.querySelectorAll('.splan').forEach(function(p){p.classList.remove('s');});el.classList.add('s');document.getElementById('spBtn').disabled=false;}
 
 async function checkout(type){
-  const idx=type==='credits'?selCPIdx:selSPIdx;
+  var idx=type==='credits'?selCPIdx:selSPIdx;
   if(idx<0)return;
-  const btn=document.getElementById(type==='credits'?'cpBtn':'spBtn');
+  var btn=document.getElementById(type==='credits'?'cpBtn':'spBtn');
   btn.disabled=true;btn.textContent='Loading...';
   try{
-    const r=await fetch('/api/create-checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({type,planIndex:idx})});
-    const d=await r.json();
+    var r=await fetch('/api/create-checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({type:type,planIndex:idx})});
+    var d=await r.json();
     if(d.url)window.location.href=d.url;
     else throw new Error(d.error||'Checkout failed');
   }catch(e){
     alert('Error: '+e.message);
     btn.disabled=false;
-    btn.innerHTML=type==='credits'?'Pay with Stripe':'Subscribe with Stripe';
+    btn.textContent=type==='credits'?'Pay with Stripe':'Subscribe with Stripe';
   }
 }
 
-// ═══════════════ HELPERS ═══════════════
 function canUse(cost){return isPro||creds>=cost;}
-function showErr(id,msg){const e=document.getElementById(id);e.textContent='⚠ '+msg;e.classList.add('on');}
+function showErr(id,msg){var e=document.getElementById(id);e.textContent='Error: '+msg;e.classList.add('on');}
 function hideErr(id){document.getElementById(id).classList.remove('on');}
 function showNC(id){document.getElementById(id).classList.add('on');}
 function hideNC(id){document.getElementById(id).classList.remove('on');}
 
-function setBtn(id,loading,lbl,icon){
-  const b=document.getElementById(id);b.disabled=loading;
-  if(loading)b.innerHTML='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation:spin .9s linear infinite"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Generating...';
-  else b.innerHTML=(icon||'')+' '+lbl;
+function setBtn(id,loading,lbl){
+  var b=document.getElementById(id);b.disabled=loading;
+  b.textContent=loading?'Generating...':lbl;
 }
 
 function dlM(type){
-  const map={img:curImg,vid:curVid,ava:curAva,mus:curMus,bgr:curBgr};
-  const url=map[type];if(!url)return;
-  const ext={img:'png',vid:'mp4',ava:'png',mus:'mp3',bgr:'png'};
-  const a=document.createElement('a');a.href=url;a.download='ai-'+type+'.'+ext[type];a.target='_blank';a.click();
+  var map={img:curImg,vid:curVid,ava:curAva,mus:curMus,bgr:curBgr};
+  var url=map[type];if(!url)return;
+  var ext={img:'png',vid:'mp4',ava:'png',mus:'mp3',bgr:'png'};
+  var a=document.createElement('a');a.href=url;a.download='ai-'+type+'.'+ext[type];a.target='_blank';a.click();
 }
 
-function copyTxt(){navigator.clipboard.writeText(document.getElementById('tTxtOut').textContent);toast('✦ Copied!');}
+function copyTxt(){navigator.clipboard.writeText(document.getElementById('tTxtOut').textContent);toast('Copied!');}
 
 function toast(msg){
-  const t=document.createElement('div');
+  var t=document.createElement('div');
   t.style.cssText='position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--bg);padding:.7rem 1.4rem;border-radius:100px;font-weight:700;font-size:.88rem;z-index:999;white-space:nowrap';
-  t.textContent=msg;document.body.appendChild(t);setTimeout(()=>t.remove(),3500);
+  t.textContent=msg;document.body.appendChild(t);setTimeout(function(){t.remove();},3500);
 }
 
 function showImgResult(url,boxId,outId,ldrId){
-  const box=document.getElementById(boxId);
-  const old=box.querySelector('img');if(old)old.remove();
-  const img=document.createElement('img');img.src=url;img.alt='Result';
-  img.onload=()=>{document.getElementById(ldrId).style.display='none';};
+  var box=document.getElementById(boxId);
+  var old=box.querySelector('img');if(old)old.remove();
+  var img=document.createElement('img');img.src=url;img.alt='Result';
+  img.onload=function(){document.getElementById(ldrId).style.display='none';};
   box.appendChild(img);
   document.getElementById(outId).classList.add('on');
 }
 
 function addHist(url){
-  const row=document.getElementById('iHRow'),hist=document.getElementById('iHist');
+  var row=document.getElementById('iHRow'),hist=document.getElementById('iHist');
   hist.classList.add('on');
-  const t=document.createElement('div');t.className='hthumb';
+  var t=document.createElement('div');t.className='hthumb';
   t.innerHTML='<img src="'+url+'"/>';
-  t.onclick=()=>{curImg=url;showImgResult(url,'iBox','iOut','iLdr');};
+  t.onclick=function(){curImg=url;showImgResult(url,'iBox','iOut','iLdr');};
   if(row.children.length>=8)row.removeChild(row.lastChild);
   row.insertBefore(t,row.firstChild);
 }
 
 function handleUpload(input){
-  const file=input.files[0];if(!file)return;
-  bgrFile=file;
-  const reader=new FileReader();
-  reader.onload=e=>{
-    const prev=document.getElementById('bPreview');
+  var file=input.files[0];if(!file)return;
+  var reader=new FileReader();
+  reader.onload=function(e){
+    var prev=document.getElementById('bPreview');
     prev.src=e.target.result;prev.style.display='block';
     document.getElementById('bTxt').textContent=file.name;
   };
   reader.readAsDataURL(file);
 }
 
-// ═══════════════ IMAGE ═══════════════
 async function genImg(){
-  const p=document.getElementById('iP').value.trim();
-  const st=document.getElementById('iSt').value;
-  const sz=document.getElementById('iSz').value;
-  const q=document.getElementById('iQ').value;
-  const cost=q==='hd'?2:1;
+  var p=document.getElementById('iP').value.trim();
+  var st=document.getElementById('iSt').value;
+  var sz=document.getElementById('iSz').value;
+  var q=document.getElementById('iQ').value;
+  var cost=q==='hd'?2:1;
   hideNC('iNC');hideErr('iE');
   if(!p)return showErr('iE','Please enter a prompt.');
   if(!canUse(cost))return showNC('iNC');
-  const fp=[p,st?st+' style':''].filter(Boolean).join(', ');
-  setBtn('iBtn',true,'Generate Image','');
+  var fp=[p,st?st+' style':''].filter(Boolean).join(', ');
+  setBtn('iBtn',true,'Generate Image');
   document.getElementById('iLdr').style.display='flex';
   document.getElementById('iOut').classList.add('on');
   curImg=null;
-  const old=document.getElementById('iBox').querySelector('img');if(old)old.remove();
+  var old=document.getElementById('iBox').querySelector('img');if(old)old.remove();
   try{
-    const r=await fetch('/api/generate-image',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:fp,size:sz,quality:q})});
-    const d=await r.json();
+    var r=await fetch('/api/generate-image',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:fp,size:sz,quality:q})});
+    var d=await r.json();
     if(!r.ok)throw new Error(d.error||'Generation failed');
     curImg=d.url;showImgResult(curImg,'iBox','iOut','iLdr');addHist(curImg);
     if(!isPro)save(creds-cost);
@@ -622,50 +493,49 @@ async function genImg(){
     document.getElementById('iOut').classList.remove('on');
     showErr('iE',e.message);
   }finally{
-    setBtn('iBtn',false,'Generate Image','<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>');
+    setBtn('iBtn',false,'Generate Image');
   }
 }
 
-// ═══════════════ VIDEO ═══════════════
 async function genVid(){
-  const p=document.getElementById('vP').value.trim();
-  const st=document.getElementById('vSt').value;
-  const mo=document.getElementById('vMo').value;
-  const cost=parseInt(document.getElementById('vCo').value);
+  var p=document.getElementById('vP').value.trim();
+  var st=document.getElementById('vSt').value;
+  var mo=document.getElementById('vMo').value;
+  var cost=parseInt(document.getElementById('vCo').value);
   hideNC('vNC');hideErr('vE');
   if(!p)return showErr('vE','Please enter a prompt.');
   if(!canUse(cost))return showNC('vNC');
-  const fp=[p,st,mo].filter(Boolean).join(', ');
-  setBtn('vBtn',true,'Generate Video','');
+  var fp=[p,st,mo].filter(Boolean).join(', ');
+  setBtn('vBtn',true,'Generate Video');
   document.getElementById('vLdr').style.display='flex';
   document.getElementById('vOut').classList.add('on');
   document.getElementById('vSB').classList.add('on');
   document.getElementById('vST').textContent='Submitting...';
   curVid=null;
-  const old=document.getElementById('vBox').querySelector('video');if(old)old.remove();
+  var old=document.getElementById('vBox').querySelector('video');if(old)old.remove();
   try{
-    const r=await fetch('/api/generate-video',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:fp})});
-    const d=await r.json();
+    var r=await fetch('/api/generate-video',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:fp})});
+    var d=await r.json();
     if(!r.ok)throw new Error(d.error||'Failed to start video');
-    const gid=d.id;
+    var gid=d.id;
     document.getElementById('vST').textContent='Processing...';
-    let videoUrl=null;
-    for(let i=0;i<50;i++){
-      await new Promise(resolve=>setTimeout(resolve,4000));
+    var videoUrl=null;
+    for(var i=0;i<50;i++){
+      await new Promise(function(resolve){setTimeout(resolve,4000);});
       document.getElementById('vST').textContent='Processing... '+(i+1)*4+'s';
-      const pr=await fetch('/api/poll-video?id='+gid);
+      var pr=await fetch('/api/poll-video?id='+gid);
       if(pr.status===202)continue;
-      if(!pr.ok){const e=await pr.json().catch(()=>({}));throw new Error(e.error||'Poll failed');}
-      const pd=await pr.json();
+      if(!pr.ok){var e=await pr.json().catch(function(){return {};});throw new Error(e.error||'Poll failed');}
+      var pd=await pr.json();
       if(pd.url){videoUrl=pd.url;break;}
     }
     if(!videoUrl)throw new Error('Timed out. Please try again.');
     curVid=videoUrl;
     document.getElementById('vST').textContent='Done!';
-    setTimeout(()=>document.getElementById('vSB').classList.remove('on'),2000);
+    setTimeout(function(){document.getElementById('vSB').classList.remove('on');},2000);
     document.getElementById('vLdr').style.display='none';
-    const box=document.getElementById('vBox');
-    const v=document.createElement('video');
+    var box=document.getElementById('vBox');
+    var v=document.createElement('video');
     v.src=videoUrl;v.controls=true;v.autoplay=true;v.loop=true;v.style.borderRadius='12px';
     box.appendChild(v);
     document.getElementById('vOut').classList.add('on');
@@ -676,29 +546,28 @@ async function genVid(){
     document.getElementById('vSB').classList.remove('on');
     showErr('vE',e.message);
   }finally{
-    setBtn('vBtn',false,'Generate Video','<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>');
+    setBtn('vBtn',false,'Generate Video');
   }
 }
 
-// ═══════════════ AVATAR ═══════════════
 async function genAva(){
-  const p=document.getElementById('aP').value.trim();
-  const st=document.getElementById('aSt').value;
-  const bg=document.getElementById('aBg').value;
-  const mo=document.getElementById('aMo').value;
-  const cost=2;
+  var p=document.getElementById('aP').value.trim();
+  var st=document.getElementById('aSt').value;
+  var bg=document.getElementById('aBg').value;
+  var mo=document.getElementById('aMo').value;
+  var cost=2;
   hideNC('aNC');hideErr('aE');
   if(!p)return showErr('aE','Please describe your avatar.');
   if(!canUse(cost))return showNC('aNC');
-  const fp=[p,st,bg,mo,'portrait, centered, high quality'].filter(Boolean).join(', ');
-  setBtn('aBtn',true,'Generate Avatar','');
+  var fp=[p,st,bg,mo,'portrait, centered, high quality'].filter(Boolean).join(', ');
+  setBtn('aBtn',true,'Generate Avatar');
   document.getElementById('aLdr').style.display='flex';
   document.getElementById('aOut').classList.add('on');
   curAva=null;
-  const old=document.getElementById('aBox').querySelector('img');if(old)old.remove();
+  var old=document.getElementById('aBox').querySelector('img');if(old)old.remove();
   try{
-    const r=await fetch('/api/generate-image',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:fp,size:'1024x1024',quality:'hd'})});
-    const d=await r.json();
+    var r=await fetch('/api/generate-image',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:fp,size:'1024x1024',quality:'hd'})});
+    var d=await r.json();
     if(!r.ok)throw new Error(d.error||'Failed');
     curAva=d.url;showImgResult(curAva,'aBox','aOut','aLdr');
     if(!isPro)save(creds-cost);
@@ -707,33 +576,32 @@ async function genAva(){
     document.getElementById('aOut').classList.remove('on');
     showErr('aE',e.message);
   }finally{
-    setBtn('aBtn',false,'Generate Avatar','<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>');
+    setBtn('aBtn',false,'Generate Avatar');
   }
 }
 
-// ═══════════════ MUSIC ═══════════════
 async function genMus(){
-  const p=document.getElementById('mP').value.trim();
-  const g=document.getElementById('mG').value;
-  const mo=document.getElementById('mMo').value;
-  const dur=document.getElementById('mD').value;
-  const cost=3;
+  var p=document.getElementById('mP').value.trim();
+  var g=document.getElementById('mG').value;
+  var mo=document.getElementById('mMo').value;
+  var dur=document.getElementById('mD').value;
+  var cost=3;
   hideNC('mNC');hideErr('mE');
   if(!p)return showErr('mE','Please describe your music.');
   if(!canUse(cost))return showNC('mNC');
-  setBtn('mBtn',true,'Generate Music','');
+  setBtn('mBtn',true,'Generate Music');
   document.getElementById('mLdr').style.display='flex';
   document.getElementById('mOut').classList.add('on');
   curMus=null;
-  const old=document.getElementById('mBox').querySelector('audio');if(old)old.remove();
+  var old=document.getElementById('mBox').querySelector('audio');if(old)old.remove();
   try{
-    const r=await fetch('/api/generate-music',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:p,genre:g,mood:mo,duration:parseInt(dur)})});
-    const d=await r.json();
+    var r=await fetch('/api/generate-music',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:p,genre:g,mood:mo,duration:parseInt(dur)})});
+    var d=await r.json();
     if(!r.ok)throw new Error(d.error||'Failed');
     curMus=d.url;
     document.getElementById('mLdr').style.display='none';
-    const box=document.getElementById('mBox');
-    const aud=document.createElement('audio');aud.src=curMus;aud.controls=true;aud.autoplay=true;box.appendChild(aud);
+    var box=document.getElementById('mBox');
+    var aud=document.createElement('audio');aud.src=curMus;aud.controls=true;aud.autoplay=true;box.appendChild(aud);
     document.getElementById('mOut').classList.add('on');
     if(!isPro)save(creds-cost);
   }catch(e){
@@ -741,38 +609,37 @@ async function genMus(){
     document.getElementById('mOut').classList.remove('on');
     showErr('mE',e.message);
   }finally{
-    setBtn('mBtn',false,'Generate Music','<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>');
+    setBtn('mBtn',false,'Generate Music');
   }
 }
 
-// ═══════════════ BG REMOVER ═══════════════
 async function genBgr(){
-  const fileInput=document.getElementById('bFile');
-  const file=fileInput.files[0];
+  var fileInput=document.getElementById('bFile');
+  var file=fileInput.files[0];
   if(!file)return showErr('bE','Please upload an image first.');
-  const cost=1;
+  var cost=1;
   hideNC('bNC');hideErr('bE');
   if(!canUse(cost))return showNC('bNC');
-  setBtn('bBtn',true,'Remove Background','');
+  setBtn('bBtn',true,'Remove Background');
   document.getElementById('bLdr').style.display='flex';
   document.getElementById('bOut').classList.add('on');
   curBgr=null;
-  const old=document.getElementById('bBox').querySelector('img');if(old)old.remove();
+  var old=document.getElementById('bBox').querySelector('img');if(old)old.remove();
   try{
-    const base64=await new Promise((resolve,reject)=>{
-      const reader=new FileReader();
-      reader.onload=e=>resolve(e.target.result);
-      reader.onerror=()=>reject(new Error('Failed to read file'));
+    var base64=await new Promise(function(resolve,reject){
+      var reader=new FileReader();
+      reader.onload=function(e){resolve(e.target.result);};
+      reader.onerror=function(){reject(new Error('Failed to read file'));};
       reader.readAsDataURL(file);
     });
-    const fmt=document.getElementById('bFmt').value;
-    const r=await fetch('/api/remove-background',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({imageBase64:base64,format:fmt})});
-    const d=await r.json();
+    var fmt=document.getElementById('bFmt').value;
+    var r=await fetch('/api/remove-background',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({imageBase64:base64,format:fmt})});
+    var d=await r.json();
     if(!r.ok)throw new Error(d.error||'Failed');
     curBgr=d.image;
     document.getElementById('bLdr').style.display='none';
-    const box=document.getElementById('bBox');
-    const img=document.createElement('img');img.src=curBgr;img.style.borderRadius='12px';box.appendChild(img);
+    var box=document.getElementById('bBox');
+    var img=document.createElement('img');img.src=curBgr;img.style.borderRadius='12px';box.appendChild(img);
     document.getElementById('bOut').classList.add('on');
     if(!isPro)save(creds-cost);
   }catch(e){
@@ -780,30 +647,29 @@ async function genBgr(){
     document.getElementById('bOut').classList.remove('on');
     showErr('bE',e.message);
   }finally{
-    setBtn('bBtn',false,'Remove Background','<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>');
+    setBtn('bBtn',false,'Remove Background');
   }
 }
 
-// ═══════════════ TEXT ═══════════════
 async function genTxt(){
-  const p=document.getElementById('tP').value.trim();
-  const ty=document.getElementById('tTy').value;
-  const to=document.getElementById('tTo').value;
-  const ln=document.getElementById('tLn').value;
-  const cost=1;
+  var p=document.getElementById('tP').value.trim();
+  var ty=document.getElementById('tTy').value;
+  var to=document.getElementById('tTo').value;
+  var ln=document.getElementById('tLn').value;
+  var cost=1;
   hideNC('tNC');hideErr('tE');
   if(!p)return showErr('tE','Please describe what to write.');
   if(!canUse(cost))return showNC('tNC');
-  setBtn('tBtn',true,'Generate Text','');
+  setBtn('tBtn',true,'Generate Text');
   document.getElementById('tLdr').style.display='flex';
   document.getElementById('tTxtOut').style.display='none';
   document.getElementById('tOut').classList.add('on');
   try{
-    const r=await fetch('/api/generate-text',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:p,type:ty,tone:to,length:ln})});
-    const d=await r.json();
+    var r=await fetch('/api/generate-text',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:p,type:ty,tone:to,length:ln})});
+    var d=await r.json();
     if(!r.ok)throw new Error(d.error||'Failed');
     document.getElementById('tLdr').style.display='none';
-    const out=document.getElementById('tTxtOut');
+    var out=document.getElementById('tTxtOut');
     out.textContent=d.text;out.style.display='block';
     document.getElementById('tOut').classList.add('on');
     if(!isPro)save(creds-cost);
@@ -812,7 +678,7 @@ async function genTxt(){
     document.getElementById('tOut').classList.remove('on');
     showErr('tE',e.message);
   }finally{
-    setBtn('tBtn',false,'Generate Text','<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>');
+    setBtn('tBtn',false,'Generate Text');
   }
 }
 </script>
