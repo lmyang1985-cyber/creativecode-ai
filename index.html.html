@@ -805,11 +805,10 @@ async function genVid() {
     for(let i=0;i<40;i++){
       await new Promise(r=>setTimeout(r,4000));
       document.getElementById('vST').textContent=`Processing... ${(i+1)*4}s`;
-    const pr=await fetch(`/api/poll-video?id=${gid}`);
+   const pr=await fetch(`/api/poll-video?id=${gid}`);
 if(pr.status===202)continue;
 if(!pr.ok){const e=await pr.json().catch(()=>({}));throw new Error(e.error||'Poll failed')}
-const pd=await pr.json();
-if(pd.url){videoUrl=pd.url;break;}
+const blob=await pr.blob();videoUrl=URL.createObjectURL(blob);break;
 // ══════════ BG REMOVER ══════════
 
 async function genBgr() {
